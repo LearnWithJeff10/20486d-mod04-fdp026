@@ -136,7 +136,7 @@ The main tasks for this exercise are as follows:
 
 18. Inside the **USING** statement block, assign the **fileBytes** variable the following value: **br.ReadBytes((int)fileOnDisk.Length)**.
 
-19. After the **USING** statement block, return a **FileResult** result by using the **File** method. Pass the following parameters to the **File** method: **fileBytes** and **requestedCity**. 
+19. After the **USING** statement block, return a **FileResult** result by using the **File** method. Pass the following parameters to the **File** method: **fileBytes** and **requestedCity**.ImageMimeType. 
 
 20. After the end of **IF** statement, add an **ELSE** statement.
 
@@ -241,7 +241,7 @@ The main tasks for this exercise are as follows:
    - Template: **MVC controller - Empty**
    - Folder: **Controllers**
 
-2.  Change the **Index** action signature to accept the following parameter:
+2. Change the **Index** action signature to accept the following parameter:
     - Type: **string** 
     - Name: **name**
 
@@ -270,8 +270,8 @@ The main tasks for this exercise are as follows:
 2. In the **app.UseMvc** method, use the **MapRoute** method to add a custom route with the following information: 
     - Name: **TravelerRoute**
     - Template: **{controller}/{action}/{name}**
-    - Defaults: **controller = "Traveler", action = "Index", name = "Katie Bruce"**
-    - Constraints: **name = "[A-Za-z ]+"**
+    - Defaults: new {**controller = "Traveler", action = "Index", name = "Katie Bruce"}**
+    - Constraints: **new {name = "[A-Za-z ]+"}**
 
     >**Note**: You can replace the default name **Katie Bruce** with your name.
 
@@ -395,8 +395,8 @@ The main tasks for this exercise are as follows:
    - Name: **_fullPath** 
 
 10. Add a constructor with the following parameter: 
-    - Type: **IHostingEnvironment**
-    - Name: **environment**
+   - Type: **IHostingEnvironment**
+   - Name: **environment**
 
 11. In the constructor, initialize the **_environment** field with the value of the **environment** parameter.
 
@@ -407,14 +407,14 @@ The main tasks for this exercise are as follows:
 14. Initialize the **_fileName** with the value of **$"log {DateTime.Now.ToString("MM-dd-yyyy-H-mm")}.txt"**.
 
 15. Initialize the **_fullPath** field with the value of **_logPath + _fileName"**.
-         
+    ​       
 #### Task 2: Add a handler for the OnActionExecuting event
 
 1. In the **LogActionFilterAttribute** class, add an override method with the following information:
     - Scope: **public**
     - Return type: **void**
     - Name: **OnActionExecuting**
-      
+
 2. Change the **OnActionExecuting** method signature to accept the following parameter:
     - Type: **ActionExecutingContext** 
     - Name: **filterContext**
@@ -444,7 +444,7 @@ The main tasks for this exercise are as follows:
     - Scope: **public**
     - Return type: **void**
     - Name: **OnActionExecuted**
-      
+
 2. Change the **OnActionExecuted** method signature to accept the following parameter:
     - Type: **ActionExecutedContext** 
     - Name: **filterContext**
@@ -472,7 +472,7 @@ The main tasks for this exercise are as follows:
     - Scope: **public**
     - Return type: **void**
     - Name: **OnResultExecuted**
-      
+
 2. Change the **OnResultExecuted** method signature to accept the following parameter:
     - Type: **ResultExecutedContext** 
     - Name: **filterContext**
